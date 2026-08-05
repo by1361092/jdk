@@ -5354,7 +5354,7 @@ bool LibraryCallKit::should_bail_out_on_non_ref_arrays(const TypeAryPtr* src_typ
     return true;
   }
 
-  if (UseArrayFlattening) {
+  if (!UseArrayFlattening) {
     // The remaining checks revolve around array flatness. Without array flatness, we don't need the stronger non-ref
     // runtime check excluding flat arrays.
     return false;
